@@ -23,6 +23,9 @@ module.exports = {
     }),
   ],
   module: {
-    rules: [{ test: /\.css$/i, use: ['style-loader', 'css-loader'] }],
+    rules: [
+      { test: /\.css$/i, use: ['style-loader', 'css-loader'] },
+      { test: /\.webp$/i, type: 'asset/resource' },
+    ],
   },
 };

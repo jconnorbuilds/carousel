@@ -1,7 +1,85 @@
+@import 'reset.css';
+
 body {
   background-color: black;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 300;
+  color: #fff;
 }
-p {
-  font-size: 96px;
-  color: green;
+
+.content {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-wrapper {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 1em;
+  position: relative;
+  width: 50%;
+}
+
+.carousel {
+  display: flex;
+  position: relative;
+  transform: translateX(-000%);
+}
+
+.carousel__prev-btn,
+.carousel__next-btn {
+  position: absolute;
+  top: 47%;
+  transform: translateY(-50%);
+  z-index: 1;
+  border: none;
+  border-radius: 10%;
+  padding: 10px 2px;
+  opacity: 50%;
+  cursor: pointer;
+}
+
+.carousel__prev-btn:hover,
+.carousel__next-btn:hover {
+  opacity: 30%;
+  background-color: #000;
+  color: #fff;
+}
+
+.carousel__prev-btn {
+  left: 0;
+}
+
+.carousel__next-btn {
+  right: 0;
+}
+
+.carousel__jumpto-btns {
+  display: flex;
+  gap: 1em;
+  bottom: -5%;
+  left: 50%;
+}
+
+.carousel__jumpto-btns > button {
+  appearance: none;
+  cursor: pointer;
+  height: 0.8em;
+  aspect-ratio: 1/1;
+  border: none;
+  border-radius: 40%;
+  background-color: #fff;
+}
+
+.carousel__jumpto-btns > button.active {
+  background-color: rgb(32, 109, 197);
+}
+
+.carousel__jumpto-btns > button:not(.active):hover {
+  background-color: rgb(126, 223, 255);
 }
