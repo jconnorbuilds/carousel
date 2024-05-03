@@ -40,7 +40,7 @@ export default class CarouselController {
         `Invalid index! Provided idx ${idx} is larger than the maximum allowed index ${this.maxIdx}`,
       );
     this.currentImageIdx = idx;
-    this.updateUI(this.currentImageIdx);
+    this.#updateUI(this.currentImageIdx);
 
     // Pause scrolling briefly when an image is selected directly
     clearTimeout(this.#timeoutId);
