@@ -4,11 +4,8 @@ import imgCoralAndBeige from './images/coral-and-beige.webp';
 import imgEmeraldAndLime from './images/emerald-and-lime.webp';
 import imgIndigoAndLightBlue from './images/indigo-and-light-blue.webp';
 import imgTurquoiseAndMint from './images/turquoise-and-mint.webp';
-import { Carousel } from './Carousel';
-
-const carouselWrapper = document.querySelector('div.carousel-wrapper');
-const carouselPrevButton = document.querySelector('.carousel__prev-btn');
-const carouselNextButton = document.querySelector('.carousel__next-btn');
+import CarouselUI from './CarouselUI.js';
+import CarouselController from './CarouselController.js';
 
 const images = [
   imgCharcoalAndAsh,
@@ -18,13 +15,8 @@ const images = [
   imgTurquoiseAndMint,
 ];
 
-const carousel = new Carousel(document.querySelector('div.carousel'));
-carouselPrevButton.addEventListener('click', () =>
-  carousel.goToImage(carousel.previousIdx),
-);
-carouselNextButton.addEventListener('click', () => carousel.goToImage(carousel.nextIdx));
+const carousel = new CarouselUI(document.querySelector('#carousel-wrapper'));
+const carouselController = new CarouselController(carousel);
 
-carouselWrapper.append(carousel.carousel);
-images.forEach((image) => carousel.addImage(image));
-
-carousel.autoscroll();
+images.forEach((image) => carouselController.addImage(image));
+carouselController.autoscroll();
